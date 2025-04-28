@@ -21,7 +21,7 @@ public class CustomerRestController {
 
     private final CustomerService customerService;
 
-    // ✅ Create Customer
+
     @PostMapping("/api/customers/customer-infos")
     public ResponseEntity<Customer> createUser(
         @RequestParam String username,
@@ -36,7 +36,7 @@ public class CustomerRestController {
         return ResponseEntity.ok(created);
     }
 
-    // ✅ Update Customer
+
     @PutMapping("/api/customers/customer-infos/{id}")
     public ResponseEntity<Customer> updateUser(
         @PathVariable Long id,
@@ -52,21 +52,21 @@ public class CustomerRestController {
         return ResponseEntity.ok(updated);
     }
 
-    // ✅ Delete Customer
+
     @DeleteMapping("/api/customers/customer-infos/{id}")
     public ResponseEntity<Customer> deleteUser(@PathVariable Long id) {
         Customer deleted = customerService.deleteUser(id);
         return ResponseEntity.ok(deleted);
     }
 
-    // ✅ Get Single Customer
+
     @GetMapping("/api/customers/customer-infos/{id}")
     public ResponseEntity<Customer> getUserById(@PathVariable Long id) {
         Customer customer = customerService.getUserById(id);
         return ResponseEntity.ok(customer);
     }
 
-    // ✅ Get All Customers
+
     @GetMapping("/api/customers/customer-infos")
     public ResponseEntity<List<Customer>> getAllUsers() {
         return ResponseEntity.ok(customerService.getAllUsers());

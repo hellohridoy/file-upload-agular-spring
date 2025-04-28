@@ -16,11 +16,13 @@ public interface CustomerService {
                         Country country,
                         String additionalInfoJson,
                         MultipartFile image,
-                        MultipartFile cv) throws IOException, SQLException;
+                        MultipartFile cv)
+        throws IOException, SQLException;
 
     Customer updateUser(Long id, String username, String phone, String email,
                         Country country, String additionalInfoJson,
-                        MultipartFile image, MultipartFile cv) throws IOException, SQLException;
+                        MultipartFile image, MultipartFile cv)
+        throws IOException, SQLException;
 
     Customer deleteUser(Long id);
 
