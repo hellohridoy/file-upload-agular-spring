@@ -1,5 +1,6 @@
 package com.example.File_Image_upload.controller;
 
+import com.example.File_Image_upload.exceptions.InvalidExcelException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.io.IOException;
 import java.nio.file.AccessDeniedException;
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -106,6 +109,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ));
     }
 
+
+    @ExceptionHandler(MultipartException.class)
+    public ResponseEntity<String> handleMultipartError(MultipartException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            .body("File upload error: " + ex.getMessage());
+    }
     // Handle access denied exceptions
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<Object> handleAccessDeniedException(
@@ -134,6 +143,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             String.format("Endpoint %s %s not found",
                 ex.getHttpMethod(), ex.getRequestURL())
         ));
+    }
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<String> handleIOException(IOException ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+            .body("File processing error: " + ex.getMessage());
+    }
+
+    @ExceptionHandler(InvalidExcelException.class)
+    public ResponseEntity<String> handleInvalidExcel(InvalidExcelException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+            .body(ex.getMessage());
     }
 
     // Generic exception handler

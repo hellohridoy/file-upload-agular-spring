@@ -28,7 +28,16 @@ dependencies {
     implementation 'org.hibernate.orm:hibernate-core:6.2.13.Final'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.postgresql:postgresql:42.7.5'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
+    //For file upload Xlxs
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+    implementation 'com.vladmihalcea:hibernate-types-60:2.21.1'
+
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
