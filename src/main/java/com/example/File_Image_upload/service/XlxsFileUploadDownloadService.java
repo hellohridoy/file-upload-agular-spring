@@ -2,9 +2,7 @@ package com.example.File_Image_upload.service;
 
 import com.example.File_Image_upload.entity.XlxsFileUploadDownload;
 import com.example.File_Image_upload.exceptions.InvalidExcelException;
-import jakarta.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

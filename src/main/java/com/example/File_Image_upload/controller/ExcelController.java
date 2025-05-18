@@ -60,7 +60,7 @@ public class ExcelController {
             .build());
     }
 
-    @GetMapping("/download")
+    @GetMapping("/api/excel/excel-download")
     public void handleFileDownload(HttpServletResponse response) {
         try {
             response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
