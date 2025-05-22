@@ -12,7 +12,6 @@ import java.util.Optional;
 @Repository
 public interface DivisionRepository extends JpaRepository<Division, String> {
 
-    // Find by name (case insensitive)
     Optional<Division> findByNameIgnoreCase(String name);
 
     @Query("SELECT d FROM Division d " +
@@ -24,7 +23,6 @@ public interface DivisionRepository extends JpaRepository<Division, String> {
 
 
 
-    // Check if division exists by code
     boolean existsByCode(String code);
 
     // Find divisions by name containing (for search functionality)
