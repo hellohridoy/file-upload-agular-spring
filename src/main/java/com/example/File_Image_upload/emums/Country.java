@@ -1,10 +1,9 @@
 package com.example.File_Image_upload.emums;
 
 public enum Country {
-    BD,
+    BANGLADESH,
     INDIA,
-    USA,
-    UK ,
+    PAKISTAN,
     CANADA,
     AUSTRALIA,
     GERMANY ,

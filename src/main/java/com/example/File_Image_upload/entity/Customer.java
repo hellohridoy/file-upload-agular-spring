@@ -1,20 +1,19 @@
 package com.example.File_Image_upload.entity;
 
+import com.example.File_Image_upload.base.uses.AbstractBaseEntity;
 import com.example.File_Image_upload.emums.Country;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
-import java.time.LocalDateTime;
 import java.util.Map;
 
 @Entity
 @Getter
 @Setter
-public class Customer {
+public class Customer extends AbstractBaseEntity<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -51,8 +50,8 @@ public class Customer {
     @Column(name = "cv_data")
     private byte[] cvData;
 
-    @Column(name = "created_at", updatable = false)
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+//    @Column(name = "created_at", updatable = false)
+//    @CreationTimestamp
+//    private LocalDateTime createdAt;
 
 }

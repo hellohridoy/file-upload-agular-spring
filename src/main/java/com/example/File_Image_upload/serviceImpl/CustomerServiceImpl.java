@@ -32,7 +32,6 @@ import java.util.Optional;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
-    private final EntityManager entityManager;
     private final DataSource dataSource;
     private final LargeObjectHelper lob;
     private final ObjectMapper objectMapper;
