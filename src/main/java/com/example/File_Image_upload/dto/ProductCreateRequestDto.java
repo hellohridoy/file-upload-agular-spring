@@ -1,4 +1,3 @@
-// ProductCreateRequestDto.java
 package com.example.File_Image_upload.dto;
 
 import lombok.Data;
