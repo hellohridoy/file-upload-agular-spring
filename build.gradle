@@ -33,7 +33,12 @@ dependencies {
     //For file upload Xlxs
     implementation 'org.apache.poi:poi:5.2.3'
     implementation 'org.apache.poi:poi-ooxml:5.2.3'
-
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Spring Mail (for JavaMailSender)
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
     implementation 'com.vladmihalcea:hibernate-types-60:2.21.1'
 
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
