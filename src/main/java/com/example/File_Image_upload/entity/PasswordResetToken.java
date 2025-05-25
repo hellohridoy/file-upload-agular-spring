@@ -1,4 +1,3 @@
-
 package com.example.File_Image_upload.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

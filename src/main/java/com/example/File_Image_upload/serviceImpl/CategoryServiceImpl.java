@@ -6,7 +6,7 @@ import com.example.File_Image_upload.entity.Categories;
 import com.example.File_Image_upload.repository.CategoryRepository;
 import com.example.File_Image_upload.service.CategoryService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
-    private CategoryRepository categoryRepository;
+
+    private final CategoryRepository categoryRepository;
 
     @Override
     public CategoryResponseDto createCategory(CategoryCreateRequestDto dto) {
